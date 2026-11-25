@@ -29,27 +29,22 @@ function keyPressed() {
   if (!"gbtpimr".includes(k) || k.length !== 1) return;
   modifiedImg = originalImg.get();
   filterName = "Original";
-  if (k === "g")
-  {
+  if (k === "g") {
 
   }
-  if (k === "b")
-  {
+  if (k === "b") {
 
   }
-  if (k === "t")
-  {
+  if (k === "t") {
 
   }
-  if (k == "p")
-  {
+  if (k == "p") {
 
   }
-  if (k == "r")
-  {
+  if (k == "r") {
 
   }
-  
+
   // Hint: modifiedImg.filter(MODE, level); update filterName.
   if (k === "i") {
     customInvert();
@@ -64,6 +59,13 @@ function customInvert() {
   modifiedImg.loadPixels();
   for (let i = 0; i < modifiedImg.pixels.length; i += 4) {
     // TODO: Invert red, green and blue; preserve alpha.
+    let r = modifiedImg.pixels[i];
+    let g = modifiedImg.pixels[i + 1];
+    let b = modifiedImg.pixels[i + 2];
+
+    modifiedImg.pixels[i] = 255 - r;
+    modifiedImg.pixels[i + 1] = 255 - g;
+    modifiedImg.pixels[i + 2] = 255 - b;
   }
   modifiedImg.updatePixels();
 }
