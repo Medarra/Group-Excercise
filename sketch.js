@@ -29,20 +29,30 @@ function keyPressed() {
   if (!"gbtpimr".includes(k) || k.length !== 1) return;
   modifiedImg = originalImg.get();
   filterName = "Original";
-  if (k === "g") {
-
+  if (k === "g")
+  {
+    modifiedImg.filter(GRAY);
+    filterName = "Gray";
   }
-  if (k === "b") {
-
+  if (k === "b")
+  {
+    modifiedImg.filter(BLUR, 3);
+    filterName = "Blur";
   }
-  if (k === "t") {
-
+  if (k === "t")
+  {
+    modifiedImg.filter(THRESHOLD, 0.5);
+    filterName = "Threshold";
   }
-  if (k == "p") {
-
+  if (k == "p")
+  {
+    modifiedImg.filter(POSTERIZE, 3);
+    filterName = "Posterize";
   }
-  if (k == "r") {
-
+  if (k == "r")
+  {
+    modifiedImg = originalImg.get();
+    filterName = "Original";
   }
 
   // Hint: modifiedImg.filter(MODE, level); update filterName.
@@ -53,6 +63,8 @@ function keyPressed() {
   if (k === "m") {
     // TODO: Blend overlayImg into modifiedImg using blend().
     // Source and destination rectangles can use the full image sizes.
+    blend(overlayImg, 0, 0, overlayImg.width, overlayImg.height, 0, 0, modifiedImg.width, modifiedImg.height, ADD);
+    filterName = "Blend";
   }
 }
 function customInvert() {
