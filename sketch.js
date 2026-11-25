@@ -31,22 +31,22 @@ function keyPressed() {
   filterName = "Original";
   if (k === "g")
   {
-    filter(GRAY);
+    modifiedImg.filter(GRAY);
     filterName = "Gray";
   }
   if (k === "b")
   {
-    filter(BLUR, 3);
+    modifiedImg.filter(BLUR, 3);
     filterName = "Blur";
   }
   if (k === "t")
   {
-    filter(THRESHOLD, 0.5);
+    modifiedImg.filter(THRESHOLD, 0.5);
     filterName = "Threshold";
   }
   if (k == "p")
   {
-    filter(POSTERIZE, 3);
+    modifiedImg.filter(POSTERIZE, 3);
     filterName = "Posterize";
   }
   if (k == "r")
@@ -63,6 +63,8 @@ function keyPressed() {
   if (k === "m") {
     // TODO: Blend overlayImg into modifiedImg using blend().
     // Source and destination rectangles can use the full image sizes.
+    blend(overlayImg, 0, 0, overlayImg.width, overlayImg.height, 0, 0, modifiedImg.width, modifiedImg.height, ADD);
+    filterName = "Blend";
   }
 }
 function customInvert() {
