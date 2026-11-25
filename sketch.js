@@ -29,7 +29,27 @@ function keyPressed() {
   if (!"gbtpimr".includes(k) || k.length !== 1) return;
   modifiedImg = originalImg.get();
   filterName = "Original";
-  // TODO: Add branches for G, B, T and P.
+  if (k === "g")
+  {
+
+  }
+  if (k === "b")
+  {
+
+  }
+  if (k === "t")
+  {
+
+  }
+  if (k == "p")
+  {
+
+  }
+  if (k == "r")
+  {
+
+  }
+  
   // Hint: modifiedImg.filter(MODE, level); update filterName.
   if (k === "i") {
     customInvert();
