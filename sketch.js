@@ -31,23 +31,28 @@ function keyPressed() {
   filterName = "Original";
   if (k === "g")
   {
-
+    filter(GRAY);
+    filterName = "Gray";
   }
   if (k === "b")
   {
-
+    filter(BLUR, 3);
+    filterName = "Blur";
   }
   if (k === "t")
   {
-
+    filter(THRESHOLD, 0.5);
+    filterName = "Threshold";
   }
   if (k == "p")
   {
-
+    filter(POSTERIZE, 3);
+    filterName = "Posterize";
   }
   if (k == "r")
   {
-
+    modifiedImg = originalImg.get();
+    filterName = "Original";
   }
   
   // Hint: modifiedImg.filter(MODE, level); update filterName.
