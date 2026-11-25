@@ -63,7 +63,7 @@ function keyPressed() {
   if (k === "m") {
     // TODO: Blend overlayImg into modifiedImg using blend().
     // Source and destination rectangles can use the full image sizes.
-    blend(overlayImg, 0, 0, overlayImg.width, overlayImg.height, 0, 0, modifiedImg.width, modifiedImg.height, ADD);
+    modifiedImg.blend(overlayImg, 0, 0, overlayImg.width, overlayImg.height, 0, 0, modifiedImg.width, modifiedImg.height, ADD);
     filterName = "Blend";
   }
 }
